@@ -1,5 +1,8 @@
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 
         /*
             There are 3 ways to create reflection of java class.
@@ -39,5 +42,48 @@ public class Main {
 
         System.out.println(birdClass);
 
+        /*
+        public void swim(Integer input, boolean swim, String input2){
+            System.out.println("Can swim");
+        }
+         */
+
+        /*
+            The following is required to invoke a method of any class using reflection strategy.
+
+         */
+
+
+        Object birdObj = birdClass.newInstance();
+
+        Method swimMethod = birdClass.getMethod("swim", Integer.class, boolean.class, String.class);
+
+        swimMethod.invoke(birdObj,25,false,"Hello");
+
+
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

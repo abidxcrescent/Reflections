@@ -13,4 +13,8 @@ public class Bird {
         System.out.println("Can swim" + input);
     }
 
+    public void swim(Integer input, boolean swim, String input2){
+        System.out.println("Can swim");
+    }
+
 }
